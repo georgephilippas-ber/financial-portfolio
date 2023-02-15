@@ -20,7 +20,8 @@ def write_exchanges():
     except RequestException as e:
         print(e)
 
-#ticker = symbol.exchange
+
+# ticker = symbol.exchange
 def latest_close(ticker: str) -> float:
     from_: datetime = datetime.now() - timedelta(days=1)
 
