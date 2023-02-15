@@ -1,27 +1,10 @@
 from __future__ import annotations
-from typing import Optional, List
+from typing import List, Optional
 
-from single import AssetClass, Industry, Strategy
+industry_classification_universe_value_list = [
+    "Technology", "Telecommunications", "Health Care", "Financials", "Real Estate", "Consumer Discretionary",
+    "Consumer Staples", "Industrials", "Basic Materials", "Energy", "Utilities"
+]
 
-
-class Asset:
-    id: int
-    assetClass: AssetClass
-    industry: Optional[Industry]
-    strategy: Optional[Strategy]
-
-    symbol: str
-    exchange: str
-
-    def __init__(self, id_: int, symbol: str, exchange: str, asset_class: AssetClass, industry: Industry = None,
-                 strategy: Strategy = None):
-        self.id = id_
-        self.symbol = symbol
-        self.exchange = exchange
-        self.assetClass = asset_class
-        self.industry = industry
-        self.strategy = strategy
-
-
-class Position:
+if __name__ == "__main__":
     pass
