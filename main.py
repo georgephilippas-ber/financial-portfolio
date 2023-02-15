@@ -1,4 +1,4 @@
-from interactivebrokers.interactive_brokers_account import InteractiveBrokersAccount
+from brokers.interactivebrokers.interactive_brokers_account import InteractiveBrokersAccount
 
 
 # This is a sample Python script.
