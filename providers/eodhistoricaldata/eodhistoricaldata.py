@@ -35,10 +35,14 @@ def latest_close(ticker: str) -> float:
             return -1.
     except RequestException as e:
         print(e)
+
         return -1.
 
 
 if __name__ == "__main__":
-    print("XDDA.XETRA", latest_close("XDDA.XETRA"))
-    print("WELU.XETRA", latest_close("WELU.XETRA"))
-    print("GRE.PA", latest_close("GRE.PA"))
+    run = False
+
+    if run:
+        print("XDDA.XETRA", latest_close("XDDA.XETRA"))
+        print("WELU.XETRA", latest_close("WELU.XETRA"))
+        print("GRE.PA", latest_close("GRE.PA"))
