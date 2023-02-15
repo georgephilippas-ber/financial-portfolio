@@ -1,3 +1,5 @@
+from typing import Tuple, Optional
+
 import json
 from requests import get
 from requests.exceptions import RequestException
@@ -22,7 +24,7 @@ def write_exchanges():
 
 
 # ticker = symbol.exchange
-def latest_close(ticker: str) -> float:
+def latest_close(ticker: str) -> Optional[Tuple[str, float]]:
     from_: datetime = datetime.now() - timedelta(days=1)
 
     try:
@@ -30,17 +32,19 @@ def latest_close(ticker: str) -> float:
             f"https://eodhistoricaldata.com/api/eod/{ticker.upper()}?api_token={TOKEN}&period=d&fmt=json&from={from_.year}-{from_.month:02}-{from_.day:02}")
 
         if response.status_code == 200 and type(response.json()) == list and len(response.json()) > 0:
-            return response.json()[-1]["close"]
+            day_ = "today" if datetime.now().strftime("%Y-%m-%d") == response.json()[-1]["date"] else "not-today"
+
+            return day_, response.json()[-1]["close"]
         else:
-            return -1.
+            return None
     except RequestException as e:
         print(e)
 
-        return -1.
+        return None
 
 
 if __name__ == "__main__":
-    run = False
+    run = True
 
     if run:
         print("XDDA.XETRA", latest_close("XDDA.XETRA"))
