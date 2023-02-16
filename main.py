@@ -1,5 +1,6 @@
 from brokers.interactivebrokers.interactive_brokers import InteractiveBrokersAccount
 
+from providers.eodhistoricaldata.eodhistoricaldata import latest_close
 
 # This is a sample Python script.
 
@@ -24,3 +25,5 @@ account = InteractiveBrokersAccount()
 print(account.details())
 print(account.allocation())
 print(account.positions())
+
+# print(latest_close("GRE.PA"))

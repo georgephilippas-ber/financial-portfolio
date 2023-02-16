@@ -11,6 +11,17 @@ from typing import Any, Optional
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+# https://www.interactivebrokers.com/en/index.php?f=1562&p=europe
+exchange_map = {
+    "IBIS": "XETRA",
+    "IBIS2": "XETRA",
+    "SBF": "PA"
+}
+
+
+def map_exchange(interactive_brokers_identifier: str) -> str:
+    return exchange_map[interactive_brokers_identifier]
+
 
 @dataclass(frozen=True)
 class Allocation:
@@ -120,7 +131,9 @@ class InteractiveBrokersAccount:
                 for position in response_.json():
                     positions_.append(
                         Position(position["conid"], position["position"], position["mktPrice"], position["currency"],
-                                 position["unrealizedPnl"], position["ticker"], position["name"],
+                                 position["unrealizedPnl"],
+                                 position["ticker"] + "." + map_exchange(position["listingExchange"]),
+                                 position["name"],
                                  (position["assetClass"], position["type"])))
 
                 return positions_

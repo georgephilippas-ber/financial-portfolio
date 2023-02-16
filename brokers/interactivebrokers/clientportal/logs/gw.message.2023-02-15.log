@@ -810,3 +810,179 @@
 -> GET /sso/ping,200|206ms
 -> request: /sso/ping
 -> GET /sso/ping,200|229ms
+-> GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+<- 200 GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+-> GET /sso/Templates/otp-responsive.ltr.css
+<- 200 GET /sso/Templates/otp-responsive.ltr.css
+-> GET /scripts/common/js/jquery-3.4.1/jquery.min.js
+-> GET /scripts/common/js/jquery-ui-1.12.1/jquery-ui.min.js
+-> GET /scripts/common/js/switchery/switchery.min.js
+-> GET /sso/CombineFiles
+-> GET /scripts/common/js/switchery/switchery-init.js
+-> GET /scripts/common/js/icheck-1.0.2/icheck.min.js
+<- 304 GET /scripts/common/js/jquery-3.4.1/jquery.min.js
+-> GET /scripts/common/js/icheck-1.0.2/icheck-init.js
+<- 200 GET /scripts/common/js/icheck-1.0.2/icheck.min.js
+-> GET /scripts/common/js/bootstrap-4.3.1/bootstrap.bundle.min.js
+<- 304 GET /scripts/common/js/jquery-ui-1.12.1/jquery-ui.min.js
+<- 200 GET /scripts/common/js/switchery/switchery-init.js
+-> GET /scripts/common/js/bootstrap-switch-3.3.2/bootstrap-switch.min.js
+<- 200 GET /scripts/common/js/switchery/switchery.min.js
+<- 200 GET /scripts/common/js/icheck-1.0.2/icheck-init.js
+<- 304 GET /scripts/common/js/bootstrap-4.3.1/bootstrap.bundle.min.js
+<- 304 GET /scripts/common/js/bootstrap-switch-3.3.2/bootstrap-switch.min.js
+<- 200 GET /sso/CombineFiles
+-> GET /sso/images/2fa-animated-once.gif
+<- 200 GET /sso/images/2fa-animated-once.gif
+-> GET /images/web/favicons/home-screen-icon-192x192.png
+-> GET /images/web/favicons/home-screen-icon-128x128.png
+<- 200 GET /images/web/favicons/home-screen-icon-192x192.png
+<- 200 GET /images/web/favicons/home-screen-icon-128x128.png
+-> GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+<- 200 GET /sso/Login?forwardTo=22&RL=1&ip2loc=US
+-> GET /sso/Templates/otp-responsive.ltr.css
+-> GET /scripts/common/js/jquery-3.4.1/jquery.min.js
+-> GET /scripts/common/js/jquery-ui-1.12.1/jquery-ui.min.js
+-> GET /scripts/common/js/bootstrap-4.3.1/bootstrap.bundle.min.js
+-> GET /scripts/common/js/bootstrap-switch-3.3.2/bootstrap-switch.min.js
+<- 304 GET /scripts/common/js/jquery-ui-1.12.1/jquery-ui.min.js
+-> GET /scripts/common/js/switchery/switchery.min.js
+-> GET /scripts/common/js/switchery/switchery-init.js
+<- 304 GET /scripts/common/js/jquery-3.4.1/jquery.min.js
+-> GET /scripts/common/js/icheck-1.0.2/icheck.min.js
+<- 304 GET /scripts/common/js/bootstrap-4.3.1/bootstrap.bundle.min.js
+<- 304 GET /scripts/common/js/bootstrap-switch-3.3.2/bootstrap-switch.min.js
+-> GET /scripts/common/js/icheck-1.0.2/icheck-init.js
+<- 304 GET /scripts/common/js/switchery/switchery.min.js
+-> GET /sso/CombineFiles
+<- 304 GET /scripts/common/js/switchery/switchery-init.js
+<- 304 GET /scripts/common/js/icheck-1.0.2/icheck.min.js
+<- 304 GET /scripts/common/js/icheck-1.0.2/icheck-init.js
+<- 200 GET /sso/Templates/otp-responsive.ltr.css
+<- 200 GET /sso/CombineFiles
+-> GET /sso/images/2fa-animated-once.gif
+<- 200 GET /sso/images/2fa-animated-once.gif
+-> POST /sso/Authenticator?7902
+<- 200 POST /sso/Authenticator?7902
+-> POST /sso/Authenticator;jsessionid=DDEA0DB1E593F5F1CBB49B67878B0CEF.ny5wwwdam2-internet?90849
+<- 200 POST /sso/Authenticator;jsessionid=DDEA0DB1E593F5F1CBB49B67878B0CEF.ny5wwwdam2-internet?90849
+-> POST /sso/Authenticator?91536
+<- 200 POST /sso/Authenticator?91536
+-> POST /sso/Authenticator?1512
+<- 200 POST /sso/Authenticator?1512
+-> POST /sso/Authenticator?73368
+<- 200 POST /sso/Authenticator?73368
+-> POST /sso/Authenticator?93185
+<- 200 POST /sso/Authenticator?93185
+-> GET /sso/images/2fa-animated-once.gif?q=0.8528722714622868
+-> POST /sso/Authenticator?80609
+<- 200 GET /sso/images/2fa-animated-once.gif?q=0.8528722714622868
+<- 200 POST /sso/Authenticator?80609
+-> POST /sso/Authenticator?36768
+<- 200 POST /sso/Authenticator?36768
+-> POST /sso/Authenticator?70558
+<- 200 POST /sso/Authenticator?70558
+-> POST /sso/Dispatcher
+<- 302 POST /sso/Dispatcher
+-> request: /v1/api/sso/validate?gw=1
+-> request: /AccountManagement/OneBarAuthentication?json=1
+-> GET /AccountManagement/OneBarAuthentication?json=1,404|54ms
+-> GET /v1/api/sso/validate?gw=1,200|161ms
+-> request: /v1/api/one/user
+-> request: /sso/AuthenticateSSODH?ACTION=INIT
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=INIT
+-> request: /sso/AuthenticateSSODH?ACTION=COMPLETE&B=1bc5729ef1372d33bfee799bf6cf527302f0e737acad3852cb82799a403e457ab741c5540b0d3e2b5163390398d99c3a8c7e3ee857dd8f78410056d7e14438fc&CHRESPONSE=000c927418459d09660fd21a9b9d1f026a5a22a7
+-> sso GET https://api.ibkr.com/sso/AuthenticateSSODH?ACTION=COMPLETE&B=1bc5729ef1372d33bfee799bf6cf527302f0e737acad3852cb82799a403e457ab741c5540b0d3e2b5163390398d99c3a8c7e3ee857dd8f78410056d7e14438fc&CHRESPONSE=000c927418459d09660fd21a9b9d1f026a5a22a7
+-> request: /v1/api/iserver/auth/status
+-> GET /v1/api/iserver/auth/status,200|48ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,200|315ms
+-> request: /v1/api/iserver/auth/ssodh/response
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/response,200|132ms
+-> request: /v1/api/iserver/auth/ssodh/init
+-> POST https://api.ibkr.com/v1/api/iserver/auth/ssodh/init,200|53ms
+-> GET /v1/api/one/user,200|4684ms
+-> request: /sso/ping
+-> GET /sso/ping,200|226ms
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> request: /sso/ping
+-> GET /sso/ping,200|214ms
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> request: /sso/ping
+-> GET /sso/ping,200|132ms
+-> request: /sso/ping
+-> GET /sso/ping,200|215ms
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> request: /sso/ping
+-> GET /sso/ping,200|647ms
+-> POST /v1/api/tickle
+<- 200 POST /v1/api/tickle
+-> GET /v1/api/portfolio/accounts
+<- 200 GET /v1/api/portfolio/accounts
+-> GET /v1/api/portfolio/U10431036/allocation
+<- 200 GET /v1/api/portfolio/U10431036/allocation
+-> GET /v1/api/portfolio/U10431036/positions/0
+<- 200 GET /v1/api/portfolio/U10431036/positions/0
+-> request: /sso/ping
+-> GET /sso/ping,200|211ms
+-> request: /sso/ping
+-> GET /sso/ping,200|210ms
+-> request: /sso/ping
+-> GET /sso/ping,200|210ms
+-> request: /sso/ping
+-> GET /sso/ping,200|209ms
+-> request: /sso/ping
+-> GET /sso/ping,200|211ms

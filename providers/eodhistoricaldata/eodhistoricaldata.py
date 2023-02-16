@@ -7,7 +7,6 @@ from requests.exceptions import RequestException
 from datetime import datetime, timedelta
 
 TOKEN = "63ece8b64d25d2.46009852"
-base_url_ = "https://eodhistoricaldata.com/api/eod/"
 
 
 def write_exchanges():
@@ -44,7 +43,7 @@ def latest_close(ticker: str) -> Optional[Tuple[str, float]]:
 
 
 if __name__ == "__main__":
-    run = True
+    run = False
 
     if run:
         print("XDDA.XETRA", latest_close("XDDA.XETRA"))
