@@ -14,31 +14,6 @@ def to_periods(periods: List[Tuple[int, int]]) -> List[Tuple[datetime, timedelta
 
 
 @dataclass(frozen=True)
-class Cash:
-    period: List[Tuple[datetime, timedelta]]
-    currency: str
-    currency_exponent: int
-
-    CFO: List[float]
-    capital_expenditure: List[float]
-    debt_issuance: List[float]
-    debt_payment: List[float]
-
-    @staticmethod
-    def revive(object_: Dict) -> Cash:
-        return Cash(period=to_periods(object_["period"]), currency=object_["currency"],
-                    currency_exponent=object_["currency_exponent"],
-                    CFO=object_["CFO"],
-                    capital_expenditure=object_["capital_expenditure"],
-                    debt_issuance=object_["debt_issuance"],
-                    debt_payment=object_["debt_payment"])
-
-    def free_cash_flow_to_equity(self) -> List[float]:
-        return [element[0] - element[1] - (element[3] - element[2]) for element in
-                zip(self.CFO, self.capital_expenditure, self.debt_issuance, self.debt_payment)]
-
-
-@dataclass(frozen=True)
 class Income:
     period: List[Tuple[datetime, timedelta]]
     currency: str
@@ -132,13 +107,40 @@ class Balance:
         return [element[0] / element[1] for element in zip(self.PPE, self.balance)]
 
 
+@dataclass(frozen=True)
+class Cash:
+    period: List[Tuple[datetime, timedelta]]
+    currency: str
+    currency_exponent: int
+
+    CFO: List[float]
+    capital_expenditure: List[float]
+    debt_issuance: List[float]
+    debt_payment: List[float]
+
+    @staticmethod
+    def revive(object_: Dict) -> Cash:
+        return Cash(period=to_periods(object_["period"]), currency=object_["currency"],
+                    currency_exponent=object_["currency_exponent"],
+                    CFO=object_["CFO"],
+                    capital_expenditure=object_["capital_expenditure"],
+                    debt_issuance=object_["debt_issuance"],
+                    debt_payment=object_["debt_payment"])
+
+    def free_cash_flow_to_equity(self) -> List[float]:
+        return [element[0] - element[1] - (element[3] - element[2]) for element in
+                zip(self.CFO, self.capital_expenditure, self.debt_issuance, self.debt_payment)]
+
+
 class Analysis:
     income: Income
     balance: Balance
+    cash: Cash
 
-    def __init__(self, income: Income, balance: Balance):
+    def __init__(self, income: Income, balance: Balance, cash: Cash):
         self.income = income
         self.balance = balance
+        self.cash = cash
 
 
 if __name__ == "__main__":
@@ -193,24 +195,13 @@ if __name__ == "__main__":
         "currency": "USD",
         "currency_exponent": 9,
         "CFO": [11.018],
-        "capital_expenditure": List[float],
-        "debt_issuance": List[float],
-        "debt_payment": List[float]
+        "capital_expenditure": [1.484],
+        "debt_issuance": [3.972],
+        "debt_payment": [4.930]
     }
 
     inc = Income.revive(cola_inc)
     bal = Balance.revive(cola_bal)
     cas = Cash.revive(cola_cash)
-    print(cas)
 
-    coke_analysis = Analysis(inc, bal)
-
-    print(inc.gross_margin())
-    print(inc.sga_to_gross_profit())
-    print(inc.depreciation_to_gross_profit())
-    print(inc.interest_to_operating_income())
-    print(inc.net_profit_margin())
-
-    print(bal.liquid())
-    print(bal.assets())
-    print(bal.ppe_to_assets())
+    coke_analysis = Analysis(inc, bal, cas)
