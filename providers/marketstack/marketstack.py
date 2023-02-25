@@ -1,10 +1,7 @@
 from typing import List, Tuple, Optional
 
-import json
 from requests import get
 from requests.exceptions import RequestException
-
-from datetime import datetime, timedelta
 
 TOKEN = "ed61629afad0ad0d882df1ed47f00310"
 
