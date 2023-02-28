@@ -1,7 +1,3 @@
-from brokers.interactivebrokers.interactive_brokers import InteractiveBrokersAccount
-
-from providers.eodhistoricaldata.eodhistoricaldata import latest_close
-
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -17,13 +13,4 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-
-account = InteractiveBrokersAccount()
-
-print(account.details())
-print(account.allocation())
-print(account.positions())
-
-# print(latest_close("GRE.PA"))
+    # See PyCharm help at https://www.jetbrains.com/help/pycharm/
